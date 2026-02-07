@@ -1,0 +1,486 @@
+:root {
+    --bg-color: #050505;
+    --text-main: #e0e0e0;
+    --text-muted: #a0a0a0;
+    --accent-color: #00d4ff;
+    /* Neon Cyan */
+    --accent-secondary: #fff500;
+    /* Neon Yellow */
+    --card-bg: #0a0a0a;
+    --card-border: #222;
+    --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+    --section-spacing: 5rem;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-main);
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    background-image: linear-gradient(#111 1px, transparent 1px),
+        linear-gradient(90deg, #111 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+/* Reset & Utils */
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: transparent;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    font-weight: 600;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: var(--accent-color);
+    color: #000;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+}
+
+/* Header - STRICT LAYOUT FIXES */
+header {
+    width: 100%;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--card-border);
+    background: rgba(5, 5, 5, 0.95);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex !important;
+    justify-content: space-between !important;
+    /* Forces items to edges */
+    align-items: center !important;
+    width: 100% !important;
+}
+
+/* Forces logo to the left and larger */
+.logo {
+    height: 60px !important;
+    /* Requested larger size */
+    width: auto;
+    filter: brightness(1.2);
+    display: block;
+}
+
+/* Forces GitHub link to the right */
+.github-link {
+    font-size: 2rem;
+    color: var(--text-muted);
+    transition: color 0.3s;
+    display: block;
+}
+
+.github-link:hover {
+    color: #fff;
+}
+
+/* Hero */
+.hero {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 0;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: -2px;
+    background: linear-gradient(to right, #fff, #888);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p.tagline {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.stat-item i {
+    color: var(--accent-secondary);
+}
+
+/* Connectors / Logos */
+.connectors {
+    padding: var(--section-spacing) 0;
+    border-top: 1px solid var(--card-border);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+    color: #fff;
+}
+
+.connector-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.connector-card {
+    background: #000;
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    width: 160px;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.connector-card h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.connector-card:hover {
+    border-color: #333;
+    /* Subtle border change on card hover, icon glow handles the rest */
+}
+
+.connector-card:hover h3 {
+    color: #fff;
+}
+
+/* SVG Icon Specifics - Original Brand Neon Style */
+.connector-card svg {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.1));
+    overflow: visible;
+}
+
+/* Common Path Styles */
+.connector-card svg path,
+.connector-card svg circle,
+.connector-card svg line,
+.connector-card svg polyline,
+.connector-card svg rect {
+    transition: all 0.3s ease;
+    vector-effect: non-scaling-stroke;
+}
+
+/* PostgreSQL - Official Blue (#336791) Neon */
+.icon-postgres path {
+    fill: #336791 !important;
+    stroke: none;
+    /* Solid fill for the elephant */
+    filter: drop-shadow(0 0 2px #336791);
+}
+
+.connector-card:hover .icon-postgres {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 15px #336791);
+}
+
+.connector-card:hover .icon-postgres path {
+    fill: #60a5fa !important;
+    /* Lighter blue on hover */
+}
+
+/* SQLite - Official Blue (#003B57 / #0F80CC) Neon */
+.icon-sqlite path {
+    fill: #0F80CC !important;
+    stroke: none;
+    filter: drop-shadow(0 0 2px #0F80CC);
+}
+
+.connector-card:hover .icon-sqlite {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 15px #0F80CC);
+}
+
+.connector-card:hover .icon-sqlite path {
+    fill: #38bdf8 !important;
+    /* Lighter cyan-blue on hover */
+}
+
+/* Neo4j - Official Teal (#008CC1) Neon */
+.icon-neo4j circle {
+    fill: #008CC1 !important;
+    stroke: none;
+}
+
+.icon-neo4j line {
+    stroke: #008CC1;
+    stroke-width: 2px;
+}
+
+.connector-card:hover .icon-neo4j {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 12px #008CC1);
+}
+
+.connector-card:hover .icon-neo4j circle {
+    fill: #22d3ee !important;
+    /* Bright teal */
+}
+
+.connector-card:hover .icon-neo4j line {
+    stroke: #22d3ee;
+}
+
+/* CSV - Excel Green (#217346) Neon */
+.icon-csv path,
+.icon-csv polyline {
+    stroke: #217346;
+    stroke-width: 2.5px;
+    fill: none;
+    filter: drop-shadow(0 0 2px #217346);
+}
+
+.icon-csv text {
+    fill: #217346;
+    font-weight: 800;
+}
+
+.connector-card:hover .icon-csv {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 12px #217346);
+}
+
+.connector-card:hover .icon-csv path,
+.connector-card:hover .icon-csv polyline {
+    stroke: #4ade80;
+    /* Bright green */
+}
+
+.connector-card:hover .icon-csv text {
+    fill: #4ade80;
+}
+
+/* AI Section & Nano Banana Infographic */
+.ai-section {
+    padding: var(--section-spacing) 0;
+    border-top: 1px solid var(--card-border);
+}
+
+.ai-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.ai-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+.ai-content p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.ai-list {
+    list-style: none;
+    padding: 0;
+}
+
+.ai-list li {
+    margin-bottom: 15px;
+    padding-left: 25px;
+    position: relative;
+    color: #ccc;
+}
+
+.ai-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+/* Nano Banana Infographic - FORCED STATIC */
+.nano-banana-container {
+    background: #000;
+    border: 1px solid #333;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8);
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nb-svg {
+    width: 100%;
+    height: auto;
+}
+
+/* Static Lines */
+.nb-line {
+    stroke: #333;
+    stroke-width: 2;
+    stroke-dasharray: 4 4;
+}
+
+.nb-line-active {
+    stroke: var(--accent-color);
+    stroke-width: 2;
+    stroke-dasharray: 0;
+    /* Solid line, no dashes for flow */
+    filter: drop-shadow(0 0 5px var(--accent-color));
+    /* NO ANIMATION */
+    animation: none !important;
+}
+
+.nb-node-rect {
+    fill: #111;
+    stroke: #444;
+    stroke-width: 2;
+}
+
+.nb-text {
+    fill: #fff;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.nb-label {
+    fill: #666;
+    font-family: sans-serif;
+    font-size: 10px;
+}
+
+.nb-core-circle {
+    fill: #000;
+    stroke: var(--accent-secondary);
+    stroke-width: 3;
+    filter: drop-shadow(0 0 10px var(--accent-secondary));
+}
+
+.nb-core-inner {
+    transform-origin: center;
+    /* NO ANIMATION */
+    animation: none !important;
+}
+
+/* Architecture */
+.architecture {
+    padding: var(--section-spacing) 0;
+    border-top: 1px solid var(--card-border);
+    background: #080808;
+}
+
+.arch-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.arch-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.arch-card h3 {
+    color: #fff;
+    margin-top: 0;
+}
+
+.arch-card p {
+    color: var(--text-muted);
+    margin-bottom: 0;
+}
+
+/* Footer */
+footer {
+    padding: 40px 0;
+    text-align: center;
+    border-top: 1px solid var(--card-border);
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .ai-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .arch-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    /* Mobile header adjustment if needed */
+    .logo {
+        height: 40px !important;
+    }
+
+    header .container {
+        padding: 0 15px;
+    }
+}

@@ -1,1 +1,208 @@
-<html><body>DBLOADA</body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DBLOADA | Minimal Context Data Loading</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="grfx/logo.png">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <a href="#"><img src="grfx/logo.png" alt="DBLOADA" class="logo"></a>
+            <a href="https://github.com/perarneng/dbloada" class="github-link" target="_blank"
+                aria-label="GitHub Repository">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Structured Data for<br>AI Agents</h1>
+            <p class="tagline">Load mass data into databases tailored for precise, low-context retrieval.</p>
+
+            <a href="https://github.com/perarneng/dbloada" class="btn">View on GitHub</a>
+
+            <div class="hero-stats">
+                <div class="stat-item"><i class="fas fa-check-circle"></i> <span>Type-Safe Schema</span></div>
+                <div class="stat-item"><i class="fas fa-bolt"></i> <span>Rust Powered</span></div>
+                <div class="stat-item"><i class="fas fa-layer-group"></i> <span>Minimal Context</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ai-section">
+        <div class="container ai-grid">
+            <div class="ai-content">
+                <h2>The Data Loading Engine</h2>
+                <p>Standard RAG pipelines can flood an AI's context window. <strong>DBLOADA</strong> builds strict SQL
+                    and Graph schemas that Agents can query precisely, eliminating hallucination and reducing token
+                    cost.</p>
+                <ul class="ai-list">
+                    <li>Expose DB schema directly to the Agent</li>
+                    <li>Construct exact SQL/Cypher queries</li>
+                    <li>Search through millions of records with minimal context overhead</li>
+                </ul>
+            </div>
+
+            <!-- Nano Banana Infographic (SVG Implementation) -->
+            <div class="ai-visual">
+                <div class="nano-banana-container">
+                    <svg class="nb-svg" viewBox="0 0 500 240" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <marker id="arrow-glow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"
+                                fill="#00d4ff">
+                                <path d="M0,0 L0,6 L6,3 z" />
+                            </marker>
+                        </defs>
+
+                        <!-- Background Grid Lines -->
+                        <path d="M50 120 L450 120" class="nb-line" />
+
+                        <!-- Flow Line 1 (Input to Engine) -->
+                        <path d="M110 120 L190 120" class="nb-line-active" marker-end="url(#arrow-glow)" />
+
+                        <!-- Flow Line 2 (Engine to SQL) -->
+                        <path d="M310 120 L390 80" class="nb-line-active" />
+
+                        <!-- Flow Line 3 (Engine to Graph) -->
+                        <path d="M310 120 L390 160" class="nb-line-active" />
+
+                        <!-- Group: Raw Data Input -->
+                        <g transform="translate(50, 90)">
+                            <rect x="0" y="0" width="60" height="60" rx="6" class="nb-node-rect" />
+                            <text x="30" y="25" text-anchor="middle" class="nb-text">RAW</text>
+                            <text x="30" y="45" text-anchor="middle" class="nb-label">CSV/API</text>
+                        </g>
+
+                        <!-- Group: DBLOADA Engine (Center) -->
+                        <g transform="translate(250, 120)">
+                            <circle r="45" class="nb-core-circle" />
+                            <g class="nb-core-inner">
+                                <rect x="-25" y="-5" width="50" height="10" fill="#ffe600" />
+                                <rect x="-5" y="-25" width="10" height="50" fill="#ffe600" />
+                            </g>
+                            <circle r="15" fill="#000" />
+                            <text x="0" y="70" text-anchor="middle" class="nb-text"
+                                style="fill: #ffe600; font-size: 14px;">DBLOADA</text>
+                        </g>
+
+                        <!-- Group: SQL DB -->
+                        <g transform="translate(390, 50)">
+                            <path d="M0,10 Q20,0 40,10 L40,40 Q20,50 0,40 Z" class="nb-node-rect"
+                                style="stroke: #00d4ff;" />
+                            <ellipse cx="20" cy="10" rx="20" ry="6" fill="none" stroke="#00d4ff" stroke-width="2" />
+                            <text x="20" y="30" text-anchor="middle" class="nb-text" style="font-size: 10px;">SQL</text>
+                        </g>
+
+                        <!-- Group: Graph DB -->
+                        <g transform="translate(390, 130)">
+                            <circle cx="20" cy="10" r="5" fill="#00d4ff" />
+                            <circle cx="10" cy="30" r="5" fill="#00d4ff" />
+                            <circle cx="30" cy="30" r="5" fill="#00d4ff" />
+                            <line x1="20" y1="10" x2="10" y2="30" stroke="#00d4ff" />
+                            <line x1="20" y1="10" x2="30" y2="30" stroke="#00d4ff" />
+                            <line x1="10" y1="30" x2="30" y2="30" stroke="#00d4ff" />
+                            <text x="20" y="55" text-anchor="middle" class="nb-text"
+                                style="font-size: 10px;">Graph</text>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="connectors">
+        <div class="container">
+            <h2 class="section-title">Supported Integrations</h2>
+            <div class="connector-grid">
+                <!-- PostgreSQL -->
+                <div class="connector-card">
+                    <svg viewBox="0 0 192.756 192.756" xmlns="http://www.w3.org/2000/svg" class="icon-postgres">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M100 133.206c-.026-.26-.078-.622-.13-1.191-.052-.285-.078-.544-.104-.803l-1.114.104h-.285c-2.875.129-6.217-.104-9.429-.647-3.186-.544-6.268-1.399-8.651-2.487-4.896-2.279-9.014-5.517-10.905-8.081-1.14-1.605-1.839-3.289-1.943-4.999-.233-3.342 1.166-5.906 4.403-7.46 1.865-.907 4.43-1.14 7.719-.466 4.222.881 6.89 1.45 8.574 1.864-7.538-12.51-13.081-25.953-16.37-37.868-4.559-16.474-4.61-30.797.311-37.091 7.46-9.506 16.681-14.272 25.695-16.422 13.158-3.134 26.264-.259 31.859 1.347a67.046 67.046 0 0 1 4.818-.699c2.331-.233 4.637-.389 6.968-.415 4.585-.078 8.728.519 12.458 1.632a33.225 33.225 0 0 1 7.668 3.341c13.701-4.663 63.977-18.028 61.18 37.869-.336 6.683-5.568 33.802-13.494 52.606-2.746 6.502-5.854 12.148-9.326 15.981-4.791 5.336-10.309 7.693-16.576 5.439-1.684-.596-3.342-1.528-4.947-2.849-.26.311-.57.647-.881.932-1.891 1.788-4.947 3.187-7.355 3.782-2.875.726-7.668 1.58-13.004.674a24.9 24.9 0 0 1-6.061-1.813c.078.854.129 1.787.104 2.771-.053 1.398-.078 2.798-.129 3.781-.131 3.394-.311 6.761-.674 10.024-.389 3.419-.959 6.45-1.84 8.858-.129.337-.232.647-.361 1.01-2.047 6.32-5.725 17.562-23.183 13.832-6.786-1.45-12.822-3.289-17.665-10.231-4.222-5.983-6.916-15.593-7.33-32.325z"
+                            fill="#ffffff" transform="translate(-25, 10) scale(0.9)" />
+                    </svg>
+                    <h3>PostgreSQL</h3>
+                </div>
+                <!-- SQLite -->
+                <div class="connector-card">
+                    <svg viewBox="0 0 512 228" xmlns="http://www.w3.org/2000/svg" class="icon-sqlite">
+                        <path
+                            d="M157.888 9.952H17.15C7.717 9.952 0 17.67 0 27.102V182.31c0 9.432 7.717 17.15 17.15 17.15h92.693c-1.052-46.122 14.698-135.63 48.045-189.508z"
+                            fill="#ffffff" />
+                        <path
+                            d="M190.715 4.872c-9.639-8.595-21.31-5.143-32.827 5.08-1.71 1.518-3.416 3.203-5.113 5.003-19.704 20.903-37.994 59.62-43.676 89.19 2.214 4.489 3.943 10.217 5.081 14.593 1.259 4.846 1.625 9.773 1.087 14.739-1.957 18.156-11.411 32.783-20.9 44.471-9.492 11.688-20.082 20.318-29.288 28.914l-.659.571a.332.332 0 0 0 .151.493l1.1.357c28.2 9.175 62.628 17.962 101.454 18.006h.478c21.2.022 41.233-2.483 58.756-7.348 64.957-18.038 102.731-64.847 112.28-139.117 2.16-16.786.136-32.55-5.321-46.104C417.807 4.29 359.704 4.904 285.598 4.904c-35.034 0-66.526-.067-94.883-.032zm63.454 44.912c33.006 0 54.381 22.843 65.518 70.033 1.485 5.259 8.163 29.5 24.819 63.6l-3.292 2.656c-17.784-25.759-32.339-49.888-46.903-74.018l-12.016 9.697c17.514 29.026 35.8 59.031 60.916 92.548l-68.528 5.769c-27.171-29.35-43.83-58.462-52.923-92.48l12.569-3.414c6.336 23.703 16.92 44.755 35.056 64.671-12.257-23.759-19.336-50.111-20.076-74.072-1.282-41.595 5.564-64.99 4.86-64.99z"
+                            fill="#ffffff" />
+                    </svg>
+                    <h3>SQLite</h3>
+                </div>
+                <!-- Neo4j -->
+                <div class="connector-card">
+                    <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" class="icon-neo4j">
+                        <circle cx="10" cy="10" r="4" class="node" />
+                        <circle cx="40" cy="15" r="4" class="node" />
+                        <circle cx="25" cy="40" r="4" class="node" />
+                        <circle cx="25" cy="25" r="6" class="node" />
+                        <line x1="10" y1="10" x2="25" y2="25" class="edge" stroke-width="2" />
+                        <line x1="40" y1="15" x2="25" y2="25" class="edge" stroke-width="2" />
+                        <line x1="25" y1="40" x2="25" y2="25" class="edge" stroke-width="2" />
+                        <line x1="10" y1="10" x2="25" y2="40" class="edge" stroke-width="2" />
+                    </svg>
+                    <h3>Neo4j</h3>
+                </div>
+                <!-- CSV -->
+                <div class="connector-card">
+                    <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" class="icon-csv">
+                        <path d="M12 5 L30 5 L38 13 L38 45 L12 45 Z" />
+                        <polyline points="30 5 30 13 38 13" />
+                        <text x="25" y="32" text-anchor="middle" font-weight="bold" font-family="sans-serif"
+                            font-size="12">CSV</text>
+                    </svg>
+                    <h3>CSV</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="architecture">
+        <div class="container">
+            <h2 class="section-title" style="text-align: left; margin-bottom: 24px;">Architecture</h2>
+            <div class="arch-grid">
+                <div class="arch-card">
+                    <h3>Modular Core</h3>
+                    <p>Rust-based micro-component architecture with strict dependency injection via
+                        `ComponentAssembler`.</p>
+                </div>
+                <div class="arch-card">
+                    <h3>Manifest Driven</h3>
+                    <p>Declaratively define data sources in a simple `dbloada.yaml` manifest file.</p>
+                </div>
+                <div class="arch-card">
+                    <h3>Extensible Traits</h3>
+                    <p>Each capability is defined as a trait, allowing for easy extension to new database types.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 DBLOADA. MIT License.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
