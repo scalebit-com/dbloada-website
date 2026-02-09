@@ -64,6 +64,26 @@ img {
     box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
 }
 
+.btn-primary {
+    background: var(--accent-color);
+    color: #000;
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+}
+
+.btn-primary:hover {
+    background: #fff;
+    color: #000;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
+    transform: translateY(-2px);
+}
+
+.hero-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
 /* Header - STRICT LAYOUT FIXES */
 header {
     width: 100%;
@@ -221,11 +241,12 @@ header .container {
 }
 
 /* PostgreSQL - Official Blue (#336791) Neon */
-.icon-postgres path {
-    fill: #336791 !important;
-    stroke: none;
-    /* Solid fill for the elephant */
-    filter: drop-shadow(0 0 2px #336791);
+.icon-postgres {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 0 2px rgba(51, 103, 145, 0.5));
 }
 
 .connector-card:hover .icon-postgres {
@@ -233,26 +254,18 @@ header .container {
     filter: drop-shadow(0 0 15px #336791);
 }
 
-.connector-card:hover .icon-postgres path {
-    fill: #60a5fa !important;
-    /* Lighter blue on hover */
-}
-
 /* SQLite - Official Blue (#003B57 / #0F80CC) Neon */
-.icon-sqlite path {
-    fill: #0F80CC !important;
-    stroke: none;
-    filter: drop-shadow(0 0 2px #0F80CC);
+.icon-sqlite {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 0 2px rgba(15, 128, 204, 0.5));
 }
 
 .connector-card:hover .icon-sqlite {
     transform: scale(1.1);
     filter: drop-shadow(0 0 15px #0F80CC);
-}
-
-.connector-card:hover .icon-sqlite path {
-    fill: #38bdf8 !important;
-    /* Lighter cyan-blue on hover */
 }
 
 /* Neo4j - Official Teal (#008CC1) Neon */
